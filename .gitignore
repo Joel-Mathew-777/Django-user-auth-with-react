@@ -65,6 +65,11 @@ coverage.xml
 # Django database dumps
 *.dump
 
+# history
+.history
+.history/
+
+
 # Editor directories and files
 .vscode/
 !.vscode/extensions.json

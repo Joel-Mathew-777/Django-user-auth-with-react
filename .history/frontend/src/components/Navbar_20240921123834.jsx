@@ -1,0 +1,44 @@
+import { Link, useNavigate } from "react-router-dom";
+import { Menu, Button } from "antd";
+import { useEffect, useState } from "react";
+
+const Navbar = () => {
+  const [user, setUser] = useState(null);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const userData = localStorage.getItem("user");
+    if (userData) {
+      setUser(JSON.parse(userData));
+    }
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem("user");
+    localStorage.removeItem("tokens");
+    setUser(null);
+    navigate("/");
+  };
+
+  return (
+    <>
+      {user && (
+        <Menu mode="horizontal">
+          <Menu.Item key="home">
+            <Link to="/home">Home</Link>
+          </Menu.Item>
+          <Menu.Item key="profile">
+            <Link to="/home/profile">Profile</Link>
+          </Menu.Item>
+          <Menu.Item key="logout">
+            <Button onClick={handleLogout} type="primary" danger>
+              Logout
+            </Button>
+          </Menu.Item>
+        </Menu>
+      )}
+    </>
+  );
+};
+
+export default Navbar;

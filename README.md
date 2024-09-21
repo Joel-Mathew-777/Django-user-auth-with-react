@@ -1,4 +1,4 @@
-# django-react-user-Authentication
+# Django-React-User-Authentication-Application
 
 A user authentication system built with Django and React.
 

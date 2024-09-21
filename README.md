@@ -11,7 +11,7 @@ A user authentication system built with Django and React.
 ## Technologies Used
 
 - **Backend**: Django, Django REST Framework
-- **Frontend**: React, Ant Design
+- **Frontend**: React, Ant Design, axios
 - **Database**: SQLite
 
 ## Installation
